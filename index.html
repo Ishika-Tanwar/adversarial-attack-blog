@@ -1,104 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adversarial Attack: Unveiling the Dark Side of AI</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adversarial Attacks in AI</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      background-color: #f5f7fa;
-      color: #333;
       margin: 0;
-      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.7;
     }
-
     header {
-      background: linear-gradient(135deg, #0a192f, #172a45);
+      background-color: #0a192f;
       color: white;
       text-align: center;
       padding: 40px 20px;
     }
-
     header h1 {
-      font-size: 2.4rem;
       margin: 0;
+      font-size: 2.2em;
     }
-
     header p {
-      font-size: 1.1rem;
-      color: #ccd6f6;
+      font-size: 1.1em;
+      color: #a8b2d1;
     }
-
-    .container {
-      width: 90%;
+    main {
       max-width: 900px;
       margin: 40px auto;
       background: white;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
+    h2 {
+      color: #0a192f;
+    }
     img {
       width: 100%;
       border-radius: 10px;
       margin: 20px 0;
     }
-
-    h2 {
-      color: #0a192f;
-      margin-top: 30px;
-    }
-
     .author {
+      margin-top: 40px;
       background: #e6f1ff;
       padding: 20px;
-      margin-top: 50px;
-      border-left: 5px solid #007acc;
       border-radius: 10px;
     }
-
-    .author h3 {
-      margin-top: 0;
-    }
-
     .social-icons {
       margin-top: 10px;
     }
-
     .social-icons a {
       text-decoration: none;
-      margin-right: 15px;
+      margin-right: 10px;
       color: #0a192f;
-      font-size: 1.5rem;
-      transition: color 0.3s ease;
+      font-size: 22px;
     }
-
-    .social-icons a:hover {
-      color: #007acc;
+    .comment-box {
+      margin-top: 50px;
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 10px;
     }
-
-    /* Gallery grid for picks */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 14px;
-      margin: 18px 0;
+    .comment-box h3 {
+      margin-bottom: 15px;
+      color: #0a192f;
     }
-
-    .gallery img {
+    .comment-box input, .comment-box textarea {
       width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
     }
-
-    @media (max-width: 520px) {
-      header { padding: 28px 12px; }
-      .container { padding: 18px; }
+    .comment-box button {
+      background-color: #0a192f;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .comment-box button:hover {
+      background-color: #112240;
     }
   </style>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -106,70 +92,73 @@
 <body>
 
 <header>
-  <h1>Adversarial Attacks: Unveiling the Dark Side of AI</h1>
-  <p>Exploring how small changes can fool powerful machine learning systems</p>
+  <h1>Adversarial Attacks in Artificial Intelligence</h1>
+  <p>Understanding How AI Models Can Be Tricked and How to Defend Against It</p>
 </header>
 
-<div class="container">
-  
-  <p>Artificial Intelligence (AI) has revolutionized industries, from healthcare to finance, by enabling systems to make decisions, recognize patterns, and automate tasks. However, with great power comes great responsibility—and risk. One of the most concerning vulnerabilities in AI systems today is the phenomenon known as an <strong>Adversarial Attack</strong>.</p>
+<main>
+  <section>
+    <h2>Introduction</h2>
+    <p>Artificial Intelligence (AI) has revolutionized industries by enabling systems that can recognize images, process natural language, and make predictions. However, AI systems are not flawless. One of the most concerning vulnerabilities in AI, especially in deep learning models, is the phenomenon known as “Adversarial Attacks.” These attacks involve small, carefully crafted changes to input data that deceive AI models into making incorrect predictions — often without human detection.</p>
+  </section>
 
-  <h2>What are Adversarial Attacks?</h2>
-  <p>Adversarial attacks involve deliberately manipulating input data to deceive machine learning models. These tiny, often imperceptible changes can cause models to misclassify images, text, or speech. For example, adding specific noise to a stop sign image might make an AI-powered car misinterpret it as a speed limit sign, leading to dangerous outcomes.</p>
+  <section>
+    <h2>What Are Adversarial Attacks?</h2>
+    <p>Adversarial attacks manipulate AI models by introducing tiny perturbations into the input data. For instance, a neural network trained to identify traffic signs may misclassify a stop sign as a speed limit sign if subtle modifications are made to the image. These modifications are often imperceptible to the human eye but significantly affect model outputs.</p>
+    <img src="images/9d2fc6b8-9b9c-4002-994e-f486548c53d6.png" alt="Adversarial Example Visualization">
+  </section>
 
-  <h2>Types of Adversarial Attacks</h2>
-  <ul>
-    <li><strong>White-box attacks:</strong> The attacker has full access to the model, its architecture, and parameters.</li>
-    <li><strong>Black-box attacks:</strong> The attacker only interacts with the model through its outputs and attempts to infer weaknesses.</li>
-    <li><strong>Targeted vs Non-Targeted attacks:</strong> Targeted attacks push the model toward a specific incorrect output, while non-targeted attacks simply aim to cause any wrong prediction.</li>
-  </ul>
-  
-  <h2>How Do Adversarial Attacks Work?</h2>
-  <p>These attacks exploit the mathematical nature of machine learning models. By computing gradients and finding minimal perturbations that alter outputs, attackers can craft malicious inputs that look identical to the original data for humans but completely mislead the AI model.</p>
+  <section>
+    <h2>Types of Adversarial Attacks</h2>
+    <p>Adversarial attacks can be categorized based on their access level to the target model:</p>
+    <ul>
+      <li><b>White-box attacks:</b> The attacker has full knowledge of the model, including architecture and parameters.</li>
+      <li><b>Black-box attacks:</b> The attacker only knows the model’s output for given inputs and crafts attacks based on observed responses.</li>
+      <li><b>Targeted vs. Non-targeted attacks:</b> Targeted attacks aim for a specific incorrect output, while non-targeted attacks only intend to cause misclassification.</li>
+    </ul>
+  </section>
 
-  <h2>Real-World Examples</h2>
-  <ul>
-    <li>Researchers have tricked facial recognition systems by wearing patterned glasses.</li>
-    <li>Autonomous vehicles have been misled by stickers placed on road signs.</li>
-    <li>Spam filters can be fooled by altering just a few words in an email.</li>
-  </ul>
+  <section>
+    <h2>Real-World Implications</h2>
+    <p>Adversarial attacks pose serious security risks in applications like autonomous driving, facial recognition, and medical diagnostics. Imagine a self-driving car misinterpreting a stop sign, or a medical AI misclassifying a malignant tumor as benign — both could have catastrophic consequences.</p>
+  </section>
 
-  <h2>Defending Against Adversarial Attacks</h2>
-  <p>Several defense mechanisms exist, including adversarial training, input preprocessing, gradient masking, and robust optimization. However, no solution is foolproof. The field is still evolving as both attack and defense methods grow more sophisticated.</p>
+  <section>
+    <h2>Defense Mechanisms</h2>
+    <p>To counter adversarial attacks, researchers have developed several strategies:</p>
+    <ul>
+      <li><b>Adversarial Training:</b> Retraining models with adversarial examples improves robustness.</li>
+      <li><b>Gradient Masking:</b> Reduces the model’s sensitivity to input changes, making attacks harder.</li>
+      <li><b>Input Preprocessing:</b> Using filters or transformations to remove potential perturbations.</li>
+      <li><b>Model Verification:</b> Ensuring mathematical guarantees of robustness under certain conditions.</li>
+    </ul>
+  </section>
 
-  <h2>Ethical and Security Implications</h2>
-  <p>As AI becomes more integrated into critical systems, adversarial robustness becomes not just a technical challenge but a moral imperative. Ensuring the safety of autonomous systems, biometric authentication, and medical AI requires resilience against such vulnerabilities.</p>
-
-  <!-- Gallery Section -->
-  <h2>Visual Examples (Gallery)</h2>
-  <div class="gallery">
-    <figure>
-      <img src="images/pick1.jpg" alt="Adversarial pick1">
-    </figure>
-    <figure>
-      <img src="images/pick2.jpg" alt="Adversarial pick2">
-    </figure>
-    <figure>
-      <img src="images/pick3.jpg" alt="Adversarial pick3">
-    </figure>
-    <figure>
-      <img src="images/pick4.jpg" alt="Adversarial pick4">
-    </figure>
-  </div>
-
-
+  <section>
+    <h2>Conclusion</h2>
+    <p>Adversarial attacks highlight the importance of developing secure and interpretable AI systems. While AI continues to advance, ensuring its reliability and safety in the presence of malicious actors remains a critical research area. The future of AI security lies in combining machine learning with robust verification and continuous defense adaptation techniques.</p>
+  </section>
 
   <div class="author">
     <h3>About the Author</h3>
-    <p>Hi! I’m <strong>Ishika Tanwar</strong>, a technology enthusiast passionate about exploring the vulnerabilities and strengths of artificial intelligence systems, especially Adversarial Attacks. Through this blog, I aim to simplify complex AI security concepts for everyone.</p>
-
+    <p>Hi! I’m <b>Ishika Tanwar</b>, a technology enthusiast passionate about the field of Adversarial Attacks in AI. Through this blog, I aim to spread awareness about AI vulnerabilities and defense mechanisms.</p>
     <div class="social-icons">
-      <a href="https://github.com/Ishika-Tanwar" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/ishika-tanwar" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/Ishika-Tanwar" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/ishika-tanwar" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
   </div>
-</div>
+
+  <div class="comment-box">
+    <h3>Leave a Comment</h3>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Write your comment here..." required></textarea>
+      <button type="submit">Post Comment</button>
+    </form>
+  </div>
+
+</main>
 
 </body>
 </html>
-
