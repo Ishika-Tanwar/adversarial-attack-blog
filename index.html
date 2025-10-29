@@ -80,13 +80,14 @@
       color: #007acc;
     }
 
-    /* small gallery grid for picks */
+    /* Gallery grid for picks */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 14px;
       margin: 18px 0;
     }
+
     .gallery img {
       width: 100%;
       height: auto;
@@ -110,14 +111,11 @@
 </header>
 
 <div class="container">
-  <img src="https://cdn.pixabay.com/photo/2020/06/19/12/09/artificial-intelligence-5311983_1280.jpg" alt="AI Concept">
   
   <p>Artificial Intelligence (AI) has revolutionized industries, from healthcare to finance, by enabling systems to make decisions, recognize patterns, and automate tasks. However, with great power comes great responsibility—and risk. One of the most concerning vulnerabilities in AI systems today is the phenomenon known as an <strong>Adversarial Attack</strong>.</p>
 
   <h2>What are Adversarial Attacks?</h2>
   <p>Adversarial attacks involve deliberately manipulating input data to deceive machine learning models. These tiny, often imperceptible changes can cause models to misclassify images, text, or speech. For example, adding specific noise to a stop sign image might make an AI-powered car misinterpret it as a speed limit sign, leading to dangerous outcomes.</p>
-
-  <img src="https://cdn.pixabay.com/photo/2021/09/14/13/21/cybersecurity-6623836_1280.jpg" alt="Cybersecurity Concept">
 
   <h2>Types of Adversarial Attacks</h2>
   <ul>
@@ -125,13 +123,9 @@
     <li><strong>Black-box attacks:</strong> The attacker only interacts with the model through its outputs and attempts to infer weaknesses.</li>
     <li><strong>Targeted vs Non-Targeted attacks:</strong> Targeted attacks push the model toward a specific incorrect output, while non-targeted attacks simply aim to cause any wrong prediction.</li>
   </ul>
-
-  <img src="https://cdn.pixabay.com/photo/2020/05/04/14/07/hacker-5126887_1280.jpg" alt="Hacker Concept">
   
   <h2>How Do Adversarial Attacks Work?</h2>
   <p>These attacks exploit the mathematical nature of machine learning models. By computing gradients and finding minimal perturbations that alter outputs, attackers can craft malicious inputs that look identical to the original data for humans but completely mislead the AI model.</p>
-
-  <img src="https://cdn.pixabay.com/photo/2017/01/10/19/05/network-1973002_1280.jpg" alt="Neural Network Visualization">
 
   <h2>Real-World Examples</h2>
   <ul>
@@ -140,24 +134,17 @@
     <li>Spam filters can be fooled by altering just a few words in an email.</li>
   </ul>
 
-  <img src="https://cdn.pixabay.com/photo/2018/06/29/11/27/robot-3509706_1280.jpg" alt="Adversarial Example Illustration">
-
   <h2>Defending Against Adversarial Attacks</h2>
   <p>Several defense mechanisms exist, including adversarial training, input preprocessing, gradient masking, and robust optimization. However, no solution is foolproof. The field is still evolving as both attack and defense methods grow more sophisticated.</p>
-
-  <img src="https://cdn.pixabay.com/photo/2021/02/25/03/12/security-6048780_1280.jpg" alt="AI Security Lock">
 
   <h2>Ethical and Security Implications</h2>
   <p>As AI becomes more integrated into critical systems, adversarial robustness becomes not just a technical challenge but a moral imperative. Ensuring the safety of autonomous systems, biometric authentication, and medical AI requires resilience against such vulnerabilities.</p>
 
-  <img src="https://cdn.pixabay.com/photo/2020/04/15/09/57/hacker-5040698_1280.jpg" alt="Digital Threats">
-  
-  <!-- Gallery: replaced attack1 & graph.png lines with pick1..pick4 -->
+  <!-- Gallery Section -->
   <h2>Visual Examples (Gallery)</h2>
   <div class="gallery">
     <figure>
       <img src="images/pick1.jpg" alt="Adversarial pick1">
-      <!-- optional caption -->
     </figure>
     <figure>
       <img src="images/pick2.jpg" alt="Adversarial pick2">
