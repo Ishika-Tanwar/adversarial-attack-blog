@@ -109,7 +109,11 @@
 #likeBtn.liked {
   background-color: #e63946;
 }
-
+#likeCount {
+  margin-left: 10px;
+  font-size: 16px;
+  color: #555;
+}
 .share-dropdown {
   position: relative;
   display: inline-block;
@@ -478,7 +482,9 @@ They also pose ethical and trust-related risks — if users can’t trust AI out
 
   <!-- Like and Share Section -->
 <div class="interaction-section">
-  <button id="likeBtn"><i class="fa fa-heart"></i> Like</button>
+  <!-- <button id="likeBtn"><i class="fa fa-heart"></i> Like</button> -->
+  <button id="likeBtn" class="like-btn"><i class="fas fa-heart"></i> Like</button>
+  <span id="likeCount">0 Likes</span>
   <div class="share-dropdown">
     <button id="shareBtn"><i class="fa fa-share-alt"></i> Share</button>
     <div class="share-options">
@@ -505,14 +511,45 @@ They also pose ethical and trust-related risks — if users can’t trust AI out
   <script>
     
 const likeBtn = document.getElementById('likeBtn');
+    const likeCount = document.getElementById("likeCount");
 const shareBtn = document.getElementById("shareBtn");
   const shareMenu = document.getElementById("shareMenu");
-likeBtn.addEventListener('click', () => {
-  likeBtn.classList.toggle('liked');
-  likeBtn.innerHTML = likeBtn.classList.contains('liked') 
-    ? '<i class="fa fa-heart"></i> Liked ❤️' 
-    : '<i class="fa fa-heart"></i> Like';
-});
+
+  let likes = 0;
+  let liked = false;
+
+  // Load previous likes from localStorage (so it stays on refresh)
+  if (localStorage.getItem("likes")) {
+    likes = parseInt(localStorage.getItem("likes"));
+    likeCount.textContent = `${likes} Likes`;
+  }
+
+  likeBtn.addEventListener("click", () => {
+    liked = !liked;
+
+    if (liked) {
+      likes++;
+      likeBtn.classList.add("liked");
+      likeBtn.innerHTML = '<i class="fas fa-heart"></i> Liked ❤️';
+    } else {
+      likes--;
+      likeBtn.classList.remove("liked");
+      likeBtn.innerHTML = '<i class="fas fa-heart"></i> Like';
+    }
+
+    // Update count display
+    likeCount.textContent = `${likes} Likes`;
+
+    // Save to local storage
+    localStorage.setItem("likes", likes);
+  });
+// likeBtn.addEventListener('click', () => {
+//   likeBtn.classList.toggle('liked');
+//   likeBtn.innerHTML = likeBtn.classList.contains('liked') 
+//     ? '<i class="fa fa-heart"></i> Liked ❤️' 
+//     : '<i class="fa fa-heart"></i> Like';
+// });
+    
 shareBtn.addEventListener("click", () => {
     shareMenu.style.display = shareMenu.style.display === "flex" ? "none" : "flex";
   });
@@ -535,6 +572,7 @@ shareBtn.addEventListener("click", () => {
   
 </body>
 </html>
+
 
 
 
