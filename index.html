@@ -79,6 +79,26 @@
     .social-icons a:hover {
       color: #007acc;
     }
+
+    /* small gallery grid for picks */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin: 18px 0;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    @media (max-width: 520px) {
+      header { padding: 28px 12px; }
+      .container { padding: 18px; }
+    }
   </style>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
@@ -132,6 +152,24 @@
 
   <img src="https://cdn.pixabay.com/photo/2020/04/15/09/57/hacker-5040698_1280.jpg" alt="Digital Threats">
   
+  <!-- Gallery: replaced attack1 & graph.png lines with pick1..pick4 -->
+  <h2>Visual Examples (Gallery)</h2>
+  <div class="gallery">
+    <figure>
+      <img src="images/pick1.jpg" alt="Adversarial pick1">
+      <!-- optional caption -->
+    </figure>
+    <figure>
+      <img src="images/pick2.jpg" alt="Adversarial pick2">
+    </figure>
+    <figure>
+      <img src="images/pick3.jpg" alt="Adversarial pick3">
+    </figure>
+    <figure>
+      <img src="images/pick4.jpg" alt="Adversarial pick4">
+    </figure>
+  </div>
+
   <!-- Your uploaded image -->
   <img src="9d2fc6b8-9b9c-4002-994e-f486548c53d6.png" alt="Adversarial Example Visualization">
 
@@ -140,8 +178,8 @@
     <p>Hi! I’m <strong>Ishika Tanwar</strong>, a technology enthusiast passionate about exploring the vulnerabilities and strengths of artificial intelligence systems, especially Adversarial Attacks. Through this blog, I aim to simplify complex AI security concepts for everyone.</p>
 
     <div class="social-icons">
-      <a href="https://github.com/Ishika-Tanwar" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/ishika-tanwar" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/Ishika-Tanwar" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/ishika-tanwar" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
     </div>
   </div>
 </div>
