@@ -174,10 +174,9 @@
       <a href="https://www.linkedin.com/in/ishika-tanwar" class="linkedin" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
     </div>
   </div>
-<!-- Like & Share Buttons -->
-  <div class="action-buttons">
-    <button id="likeBtn"><i class="fas fa-heart"></i> Like</button>
-    <button id="shareBtn"><i class="fas fa-share-alt"></i> Share</button>
+ <div class="btn-container">
+      <button class="btn like-btn" onclick="toggleLike()"><i class="fa-solid fa-heart"></i> Like</button>
+      <button class="btn" onclick="sharePost()"><i class="fa-solid fa-share-nodes"></i> Share</button>
   </div>
   <div class="comment-box">
     <h3>Leave a Comment</h3>
@@ -190,9 +189,21 @@
   </div>
 
 </main>
+<script>
+    function toggleLike() {
+      const btn = document.querySelector('.like-btn');
+      btn.classList.toggle('liked');
+    }
 
+    function sharePost() {
+      const blogLink = window.location.href;
+      navigator.clipboard.writeText(blogLink);
+      alert('Blog link copied to clipboard!');
+    }
+  </script>
 </body>
 </html>
+
 
 
 
